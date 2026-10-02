@@ -13,7 +13,7 @@ const messages=[
 
 // Primeiro o navegador carrega a interface inteira.
 // Só DEPOIS do evento load o loading aparece e começa a contagem de ~50s.
-const TOTAL=50000;
+const TOTAL=56000;
 function startLoadingExperience(){
  loader.classList.add("active");
  const start=performance.now();
