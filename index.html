@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07080a">
+  <title>Prates a conhecer — uma infância contada por quem estava lá</title>
+  <meta name="description" content="Portfólio digital de Psicologia do Desenvolvimento da Criança — Anthony Jesus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="loader-word">reconstruindo memória<span class="dots">...</span></div>
+    <div class="loader-line"><span></span></div>
+  </div>
+
+  <div class="grain"></div>
+  <div class="cursor" id="cursor"></div>
+  <button class="sound-toggle" id="soundToggle" aria-label="Ativar som">som <span>off</span></button>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-meta mono">PSICOLOGIA DO DESENVOLVIMENTO DA CRIANÇA · UFBA</div>
+      <div class="hero-count mono">01 — 04</div>
+
+      <div class="photo photo-a float" data-depth="1">
+        <img src="assets/memoria-01.jpg" alt="Fotografia antiga de uma criança brincando com um cachorro">
+        <span>arquivo / 01</span>
+      </div>
+      <div class="photo photo-b float" data-depth="-1">
+        <img src="assets/memoria-01.jpg" alt="" aria-hidden="true">
+      </div>
+      <div class="photo photo-c float" data-depth="2">
+        <img src="assets/memoria-01.jpg" alt="" aria-hidden="true">
+      </div>
+      <div class="photo photo-d float" data-depth="-2">
+        <img src="assets/memoria-01.jpg" alt="" aria-hidden="true">
+      </div>
+
+      <div class="hero-title">
+        <p class="eyebrow">uma infância contada por quem estava lá</p>
+        <h1>PRATES<br><em>A CONHECER</em></h1>
+        <p class="hero-question">Se eu não consigo lembrar de tudo,<br>quem pode contar quem eu fui?</p>
+        <a class="enter" href="#prologo"><span>entrar na história</span><b>↓</b></a>
+      </div>
+    </section>
+
+    <section class="prologo section-dark" id="prologo">
+      <div class="section-index mono">00 / PRÓLOGO</div>
+      <div class="prologo-copy">
+        <p class="big-line reveal">Eu não lembro de tudo.</p>
+        <p class="big-line muted reveal">Mas algumas pessoas lembram.</p>
+        <div class="prologo-detail reveal">
+          <span class="rule"></span>
+          <p>Este portfólio parte de fotografias, relatos e memórias para reconstruir quatro momentos da minha infância — e, ao longo da disciplina, olhar novamente para essas experiências através da Psicologia do Desenvolvimento.</p>
+        </div>
+      </div>
+      <div class="scroll-note mono">role para continuar ↓</div>
+    </section>
+
+    <section class="chapter chapter-01" id="momento-01">
+      <div class="chapter-head">
+        <div>
+          <span class="chapter-number">01</span>
+          <span class="mono chapter-label">PRIMEIRO MOMENTO</span>
+        </div>
+        <span class="mono chapter-period">[ período a definir ]</span>
+      </div>
+
+      <div class="chapter-intro">
+        <p class="eyebrow">antes de eu me lembrar</p>
+        <h2>Quem era<br><em>essa criança?</em></h2>
+      </div>
+
+      <div class="memory-stage">
+        <figure class="memory-photo large tilt">
+          <img src="assets/memoria-01.jpg" alt="Fotografia antiga de uma criança brincando com um cachorro">
+          <figcaption><span>MEMÓRIA #01</span><span>arquivo familiar</span></figcaption>
+        </figure>
+        <div class="memory-note">
+          <span class="mono">01.01 / fotografia</span>
+          <p>Uma imagem encontrada no arquivo da família. O relato que acompanha esta fotografia será registrado antes da releitura teórica.</p>
+        </div>
+      </div>
+
+      <div class="placeholder-grid">
+        <article class="memory-card">
+          <span class="mono">RELATO / 01</span>
+          <h3>“Como eu era nessa época?”</h3>
+          <p>Espaço reservado para o áudio ou vídeo de um familiar.</p>
+          <button class="fake-player" type="button"><span>▶</span> ouvir memória <small>00:00</small></button>
+        </article>
+        <article class="memory-card accent-card">
+          <span class="mono">RELEITURA</span>
+          <h3>O que eu vou descobrir</h3>
+          <p>Depois das leituras, esta área receberá os conceitos da disciplina que ajudarem a interpretar esta lembrança.</p>
+          <span class="pending mono">conteúdo em construção</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="teaser section-dark">
+      <div class="section-index mono">CONTINUAÇÃO</div>
+      <div class="teaser-center">
+        <span class="mono">02 — 04</span>
+        <h2>A história<br>continua.</h2>
+        <p>As próximas fases serão construídas a partir das memórias coletadas e das leituras da disciplina.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-dark">
+    <span>ANTHONY JESUS</span>
+    <span>PORTFÓLIO · 2026</span>
+    <a href="#top">voltar ao início ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
