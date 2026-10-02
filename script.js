@@ -1,9 +1,41 @@
-const loader=document.getElementById("loader");window.addEventListener("load",()=>setTimeout(()=>loader.classList.add("done"),1550));
-const cursor=document.getElementById("cursor");
-if(window.matchMedia("(pointer:fine)").matches){window.addEventListener("pointermove",e=>{cursor.style.left=e.clientX+"px";cursor.style.top=e.clientY+"px";document.querySelectorAll(".float").forEach(el=>{const d=Number(el.dataset.depth||1);el.style.marginLeft=((e.clientX-innerWidth/2)/innerWidth*d*18)+"px";el.style.marginTop=((e.clientY-innerHeight/2)/innerHeight*d*18)+"px"})});document.querySelectorAll("a,button,.polaroid,.memory-photo,.chole-window").forEach(el=>{el.addEventListener("mouseenter",()=>cursor.classList.add("hover"));el.addEventListener("mouseleave",()=>cursor.classList.remove("hover"))})}else cursor.style.display="none";
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.15});document.querySelectorAll(".reveal").forEach(x=>io.observe(x));
-document.querySelectorAll(".magnetic").forEach(el=>{el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.12}px)`});el.addEventListener("pointerleave",()=>el.style.transform="")});
-const soundToggle=document.getElementById("soundToggle");let sound=false;soundToggle.addEventListener("click",()=>{sound=!sound;soundToggle.querySelector("span").textContent=sound?"on":"off"});
-document.querySelectorAll(".fake-player").forEach(btn=>btn.addEventListener("click",()=>{btn.querySelector("span").textContent="●";btn.querySelector("small").textContent="áudio pendente"}));
-const stage=document.querySelector(".chole-window");if(stage){stage.addEventListener("pointermove",e=>{const r=stage.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;stage.style.transform=`scale(1.02) translate(${x*9}px,${y*9}px)`});stage.addEventListener("pointerleave",()=>stage.style.transform="")};
-window.addEventListener("scroll",()=>{document.documentElement.style.setProperty("--scroll",window.scrollY)});
+const $=s=>document.querySelector(s);
+const loader=$("#loader"),msg=$("#loaderMessage"),sub=$("#loaderSub"),bar=$("#loaderBar"),pct=$("#loaderPct"),drinkModal=$("#drinkModal"),drinkDock=$("#drinkDock");
+const messages=[
+["Olá Juliana, como você está?","antes de abrir o álbum, deixa o Zeca preparar tudo..."],
+["Aguarde, estamos preparando tudo pra você.","organizando fotografias, lembranças e algumas surpresas..."],
+["O Zeca é o nosso mascote. Você vai gostar dele.","ele ainda está aprendendo a posar para a câmera."],
+["Ratos de Brofem Brener.","sim. essa piada é só para quem precisa entender."]
+];
+let i=0,progress=1;
+const timer=setInterval(()=>{
+ i=Math.min(i+1,messages.length-1);
+ msg.textContent=messages[i][0];sub.textContent=messages[i][1];
+},950);
+const progressTimer=setInterval(()=>{
+ progress=Math.min(progress+2,100);bar.style.width=progress+"%";pct.textContent=String(progress).padStart(2,"0")+"%";
+ if(progress>=100){clearInterval(progressTimer);clearInterval(timer);setTimeout(()=>{loader.classList.add("done");openDrink()},500)}
+},38);
+function openDrink(){drinkModal.classList.add("open");document.body.classList.add("modal-open")}
+function closeDrink(){drinkModal.classList.remove("open");document.body.classList.remove("modal-open");drinkDock.classList.add("show")}
+$("#drinkClose").addEventListener("click",closeDrink);
+$(".drink-backdrop").addEventListener("click",closeDrink);
+document.querySelectorAll(".drink-option").forEach(btn=>btn.addEventListener("click",()=>{
+ localStorage.setItem("pdcDrink",JSON.stringify({icon:btn.dataset.icon,name:btn.dataset.name}));
+ $("#drinkMiniIcon").textContent=btn.dataset.icon;$("#drinkMiniName").textContent=btn.dataset.name;
+ closeDrink();
+}));
+const saved=localStorage.getItem("pdcDrink");
+if(saved){try{const d=JSON.parse(saved);$("#drinkMiniIcon").textContent=d.icon;$("#drinkMiniName").textContent=d.name}catch(e){}}
+drinkDock.addEventListener("click",openDrink);
+const cursor=$("#cursor");
+if(window.matchMedia("(pointer:fine)").matches){
+ window.addEventListener("pointermove",e=>{
+  cursor.style.left=e.clientX+"px";cursor.style.top=e.clientY+"px";
+  document.querySelectorAll(".hero-photo").forEach(el=>{const d=Number(el.dataset.depth||1);el.style.translate=((e.clientX-innerWidth/2)/innerWidth*d*12)+"px "+((e.clientY-innerHeight/2)/innerHeight*d*12)+"px"})
+ });
+ document.querySelectorAll("a,button,.hero-photo,.memory-photo,.zeca-hero,.zeca-break img,.drink-dock").forEach(el=>{
+  el.addEventListener("mouseenter",()=>cursor.classList.add("hover"));el.addEventListener("mouseleave",()=>cursor.classList.remove("hover"))
+ });
+}
+document.querySelectorAll(".magnetic").forEach(el=>{el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect();el.style.translate=((e.clientX-r.left-r.width/2)*.12)+"px "+((e.clientY-r.top-r.height/2)*.12)+"px"});el.addEventListener("pointerleave",()=>el.style.translate="")});
+document.querySelectorAll(".audio-button").forEach(btn=>btn.addEventListener("click",()=>{btn.innerHTML="● memória em breve <small>áudio pendente</small>"}));
