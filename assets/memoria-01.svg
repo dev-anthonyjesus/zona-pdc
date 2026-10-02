@@ -1,16 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
 <defs>
- <filter id="grain"><feTurbulence baseFrequency=".7" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 .13 0"/></filter>
- <linearGradient id="g" x2="1" y2="1"><stop stop-color="#d8d0bf"/><stop offset=".5" stop-color="#9c9a8e"/><stop offset="1" stop-color="#5b5b55"/></linearGradient>
+ <filter id="grain"><feTurbulence baseFrequency=".75" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 .10 0"/></filter>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f7c94b"/><stop offset=".45" stop-color="#f487a5"/><stop offset="1" stop-color="#82bf58"/></linearGradient>
 </defs>
-<rect width="1200" height="900" fill="#171817"/>
-<rect x="55" y="55" width="1090" height="790" rx="4" fill="url(#g)"/>
-<path d="M80 690 C250 560 360 600 500 690 S790 730 1115 560 L1115 820 L80 820Z" fill="#555650" opacity=".75"/>
-<path d="M100 170 Q330 120 540 260 T1100 190 L1100 540 Q900 470 720 550 T100 500Z" fill="#c5b99f" opacity=".55"/>
-<ellipse cx="585" cy="570" rx="170" ry="100" fill="#242522" opacity=".9"/>
-<circle cx="470" cy="535" r="76" fill="#2c2d29"/>
-<circle cx="470" cy="535" r="12" fill="#d7d1be"/>
-<path d="M485 610 Q585 665 690 600" stroke="#22231f" stroke-width="42" fill="none" stroke-linecap="round"/>
-<rect width="1200" height="900" filter="url(#grain)" opacity=".55"/>
-<text x="85" y="105" fill="#f3eee2" font-family="monospace" font-size="18" letter-spacing="4">ARQUIVO FAMILIAR / MEMÓRIA 01</text>
+<rect width="1200" height="900" fill="#fff5d7"/>
+<rect x="35" y="35" width="1130" height="830" rx="8" fill="url(#bg)"/>
+<ellipse cx="590" cy="610" rx="350" ry="155" fill="#82bf58" opacity=".85"/>
+<circle cx="565" cy="430" r="120" fill="#b84b2f"/>
+<path d="M465 425 Q570 330 670 425 L700 610 Q580 680 455 595Z" fill="#f487a5"/>
+<circle cx="530" cy="425" r="11" fill="#20201d"/><circle cx="615" cy="425" r="11" fill="#20201d"/>
+<path d="M545 475 Q575 500 605 475" fill="none" stroke="#20201d" stroke-width="10" stroke-linecap="round"/>
+<ellipse cx="390" cy="570" rx="135" ry="95" fill="#20201d"/>
+<circle cx="310" cy="535" r="70" fill="#20201d"/>
+<path d="M300 530 Q340 500 390 530" fill="none" stroke="#f7c94b" stroke-width="22" stroke-linecap="round"/>
+<circle cx="330" cy="525" r="9" fill="#fff5d7"/>
+<path d="M440 575 Q505 650 575 580" fill="none" stroke="#20201d" stroke-width="42" stroke-linecap="round"/>
+<path d="M145 180 q55 -45 110 0 M860 160 q55 -45 110 0 M940 720 q55 -45 110 0" fill="none" stroke="#287b46" stroke-width="10" stroke-linecap="round"/>
+<path d="M180 740 l35 -48 35 48 M1040 420 l35 -48 35 48 M155 390 l25 -35 25 35" fill="none" stroke="#287b46" stroke-width="8" stroke-linecap="round"/>
+<rect width="1200" height="900" filter="url(#grain)" opacity=".4"/>
+<text x="75" y="100" fill="#20201d" font-family="monospace" font-size="18" letter-spacing="4">ARQUIVO FAMILIAR / MEMÓRIA</text>
 </svg>
