@@ -1,157 +1,75 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#82bf58">
-  <title>PRATES A CONHECER — uma infância contada por quem estava lá</title>
-  <meta name="description" content="Portfólio digital de Psicologia do Desenvolvimento da Criança — Anthony Jesus.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#82bf58">
+<title>PRATES A CONHECER — uma infância contada por quem estava lá</title>
+<meta name="description" content="Portfólio digital de Psicologia do Desenvolvimento da Criança — Anthony Jesus.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="loader" id="loader">
-    <div class="loader-doodle">✳</div>
-    <div class="loader-word">abrindo o álbum<span>...</span></div>
-    <div class="loader-line"><b></b></div>
+<div class="loader" id="loader"><div class="loader-doodle">✳</div><div class="loader-word">abrindo o álbum<span>...</span></div><div class="loader-line"><b></b></div></div>
+<div class="grain"></div><div class="cursor" id="cursor"><span></span></div>
+<button class="sound-toggle" id="soundToggle">som <span>off</span></button>
+
+<main>
+<section class="hero" id="top">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="blob blob-c"></div>
+  <div class="hero-meta mono">PSICOLOGIA DO DESENVOLVIMENTO DA CRIANÇA · UFBA</div><div class="hero-count mono">01 — 04</div>
+  <div class="hero-stamp">ARQUIVO<br><strong>JESUS</strong></div>
+
+  <div class="polaroid p1 float" data-depth="1"><div class="tape"></div><img src="assets/memoria-01.svg" alt="Memória de infância"><span>arquivo / 01</span></div>
+  <div class="polaroid p2 float" data-depth="-1"><img src="assets/memoria-01.svg" alt="" aria-hidden="true"></div>
+  <div class="polaroid p3 float" data-depth="2"><img src="assets/memoria-01.svg" alt="" aria-hidden="true"></div>
+  <div class="polaroid p4 float" data-depth="-2"><img src="assets/memoria-01.svg" alt="" aria-hidden="true"></div>
+
+  <div class="hero-title">
+    <p class="eyebrow">uma infância contada por quem estava lá</p>
+    <h1><span class="title-solid">PRATES</span><span class="title-outline">A CONHECER</span></h1>
+    <div class="hero-sub"><p>Juliana, você está <strong>Prates a conhecer</strong> minha história.</p><p class="question">Se eu não consigo lembrar de tudo,<br><em>quem pode contar quem eu fui?</em></p></div>
+    <a class="enter magnetic" href="#prologo"><span>entrar na história</span><b>↓</b></a>
+  </div>
+  <div class="hero-sticker">memória<br><i>em construção</i></div>
+  <div class="hero-arrow">↓</div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>MEMÓRIA</span><i>✳</i><span>INFÂNCIA</span><i>✳</i><span>FAMÍLIA</span><i>✳</i><span>DESENVOLVIMENTO</span><i>✳</i><span>MEMÓRIA</span><i>✳</i><span>INFÂNCIA</span><i>✳</i><span>FAMÍLIA</span><i>✳</i><span>DESENVOLVIMENTO</span><i>✳</i></div></div>
+
+<section class="prologo" id="prologo">
+  <div class="section-index mono">00 / PRÓLOGO</div><div class="prologo-shape"></div><div class="prologo-dot"></div>
+  <div class="prologo-copy">
+    <p class="big-line reveal">Eu não lembro de tudo.</p><p class="big-line muted reveal">Mas algumas pessoas lembram.</p>
+    <div class="prologo-detail reveal"><span class="rule"></span><p>Este portfólio parte de fotografias, relatos e memórias para reconstruir quatro momentos da minha infância — e, ao longo da disciplina, olhar novamente para essas experiências através da Psicologia do Desenvolvimento.</p></div>
+  </div>
+  <div class="floating-word">lembrar</div>
+</section>
+
+<section class="chapter chapter-01" id="momento-01">
+  <div class="chapter-head"><div><span class="chapter-number">01</span><span class="mono chapter-label">PRIMEIRO MOMENTO</span></div><span class="mono chapter-period">[ período a definir ]</span></div>
+  <div class="chapter-intro"><p class="eyebrow">antes de eu me lembrar</p><h2>Quem era<br><em>essa criança?</em></h2><div class="chapter-scribble">?</div></div>
+
+  <div class="memory-stage">
+    <figure class="memory-photo tilt"><div class="photo-label mono">MEMÓRIA #01</div><img src="assets/memoria-01.svg" alt="Arquivo visual de uma memória de infância"><figcaption><span>arquivo familiar</span><span>fotografia</span></figcaption></figure>
+    <div class="memory-note"><span class="mono">01.01 / fotografia</span><p>Há imagens que não funcionam apenas como registro. Elas são pistas para reconstruir uma história que eu próprio não consigo lembrar inteira.</p><span class="hand-note">olha mais de perto →</span></div>
   </div>
 
-  <div class="grain"></div>
-  <div class="cursor" id="cursor"><span></span></div>
+  <div class="memory-divider"><span>e então aparece o Chole</span><span class="paw">• • •</span></div>
 
-  <button class="sound-toggle" id="soundToggle" aria-label="Ativar som">som <span>off</span></button>
+  <div class="chole-memory">
+    <div class="chole-card"><span class="mono">MEMÓRIA / CHOLE</span><div class="chole-window"><img src="assets/memoria-01.svg" alt="Representação visual da lembrança de Chole"><div class="chole-glow"></div><div class="scanline"></div></div></div>
+    <div class="chole-copy"><p class="eyebrow">uma lembrança que ganhou forma</p><h3>Algumas memórias<br><em>também têm companhia.</em></h3><p>Este espaço será ocupado pela fotografia real do Chole e pela animação que transforma a imagem em lembrança viva.</p><span class="mono pending">animação em construção / arquivo real entra na próxima camada</span></div>
+  </div>
 
-  <main>
-    <section class="hero" id="top">
-      <div class="scribble scribble-1"></div>
-      <div class="scribble scribble-2"></div>
+  <div class="placeholder-grid">
+    <article class="memory-card"><span class="mono">RELATO / 01</span><h3>“Como eu era nessa época?”</h3><p>Espaço reservado para o áudio ou vídeo de um familiar. A memória de quem estava lá entra antes da releitura teórica.</p><button class="fake-player" type="button"><span>▶</span> ouvir memória <small>00:00</small></button></article>
+    <article class="memory-card accent-card"><span class="mono">RELEITURA</span><h3>O que eu vou descobrir</h3><p>Depois das leituras, esta área receberá os conceitos da disciplina que ajudarem a interpretar esta lembrança.</p><span class="pending mono">conteúdo em construção</span></article>
+  </div>
+</section>
 
-      <div class="hero-meta mono">PSICOLOGIA DO DESENVOLVIMENTO DA CRIANÇA · UFBA</div>
-      <div class="hero-count mono">01 — 04</div>
-
-      <div class="polaroid p1 float" data-depth="1">
-        <div class="tape"></div>
-        <img src="assets/memoria-01.svg" alt="Memória de infância em fotografia">
-        <span>arquivo / 01</span>
-      </div>
-      <div class="polaroid p2 float" data-depth="-1">
-        <img src="assets/memoria-01.svg" alt="" aria-hidden="true">
-      </div>
-      <div class="polaroid p3 float" data-depth="2">
-        <img src="assets/memoria-01.svg" alt="" aria-hidden="true">
-      </div>
-      <div class="polaroid p4 float" data-depth="-2">
-        <img src="assets/memoria-01.svg" alt="" aria-hidden="true">
-      </div>
-
-      <div class="hero-title">
-        <p class="eyebrow">uma infância contada por quem estava lá</p>
-        <h1>PRATES <span>A CONHECER</span></h1>
-        <div class="hero-sub">
-          <p>Juliana, você está <strong>Prates a conhecer</strong> minha história.</p>
-          <p class="question">Se eu não consigo lembrar de tudo,<br><em>quem pode contar quem eu fui?</em></p>
-        </div>
-        <a class="enter" href="#prologo"><span>entrar na história</span><b>↓</b></a>
-      </div>
-
-      <div class="hero-sticker">memória<br>em construção</div>
-      <div class="scroll-note mono">role para começar ↓</div>
-    </section>
-
-    <section class="prologo" id="prologo">
-      <div class="section-index mono">00 / PRÓLOGO</div>
-      <div class="prologo-shape"></div>
-      <div class="prologo-copy">
-        <p class="big-line reveal">Eu não lembro de tudo.</p>
-        <p class="big-line muted reveal">Mas algumas pessoas lembram.</p>
-        <div class="prologo-detail reveal">
-          <span class="rule"></span>
-          <p>Este portfólio parte de fotografias, relatos e memórias para reconstruir quatro momentos da minha infância — e, ao longo da disciplina, olhar novamente para essas experiências através da Psicologia do Desenvolvimento.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter chapter-01" id="momento-01">
-      <div class="chapter-head">
-        <div><span class="chapter-number">01</span><span class="mono chapter-label">PRIMEIRO MOMENTO</span></div>
-        <span class="mono chapter-period">[ período a definir ]</span>
-      </div>
-
-      <div class="chapter-intro">
-        <p class="eyebrow">antes de eu me lembrar</p>
-        <h2>Quem era<br><em>essa criança?</em></h2>
-      </div>
-
-      <div class="memory-stage">
-        <figure class="memory-photo tilt">
-          <div class="photo-label mono">MEMÓRIA #01</div>
-          <img src="assets/memoria-01.svg" alt="Arquivo visual de uma memória de infância">
-          <figcaption><span>arquivo familiar</span><span>fotografia</span></figcaption>
-        </figure>
-
-        <div class="memory-note">
-          <span class="mono">01.01 / fotografia</span>
-          <p>Há imagens que não funcionam apenas como registro. Elas são pistas para reconstruir uma história que eu próprio não consigo lembrar inteira.</p>
-          <span class="hand-note">olha mais de perto →</span>
-        </div>
-      </div>
-
-      <div class="memory-divider">
-        <span>e então aparece o Chole</span>
-        <span class="paw">• • •</span>
-      </div>
-
-      <div class="chole-memory">
-        <div class="chole-card">
-          <span class="mono">MEMÓRIA / CHOLE</span>
-          <div class="chole-window">
-            <img src="assets/memoria-01.svg" alt="Representação visual da lembrança de Chole">
-            <div class="chole-glow"></div>
-          </div>
-        </div>
-        <div class="chole-copy">
-          <p class="eyebrow">uma lembrança que ganhou forma</p>
-          <h3>Algumas memórias<br><em>também têm companhia.</em></h3>
-          <p>Este espaço será ocupado pela fotografia real do Chole e pela animação que transforma a imagem em lembrança viva.</p>
-          <span class="mono pending">animação em construção / arquivo real entra na próxima camada</span>
-        </div>
-      </div>
-
-      <div class="placeholder-grid">
-        <article class="memory-card">
-          <span class="mono">RELATO / 01</span>
-          <h3>“Como eu era nessa época?”</h3>
-          <p>Espaço reservado para o áudio ou vídeo de um familiar. A memória de quem estava lá entra antes da releitura teórica.</p>
-          <button class="fake-player" type="button"><span>▶</span> ouvir memória <small>00:00</small></button>
-        </article>
-        <article class="memory-card accent-card">
-          <span class="mono">RELEITURA</span>
-          <h3>O que eu vou descobrir</h3>
-          <p>Depois das leituras, esta área receberá os conceitos da disciplina que ajudarem a interpretar esta lembrança.</p>
-          <span class="pending mono">conteúdo em construção</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="teaser">
-      <div class="section-index mono">CONTINUAÇÃO</div>
-      <div class="teaser-doodle">✦</div>
-      <div class="teaser-center">
-        <span class="mono">02 — 04</span>
-        <h2>A história<br><em>continua.</em></h2>
-        <p>As próximas fases serão construídas a partir das memórias coletadas e das leituras da disciplina.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <span>ANTHONY JESUS</span>
-    <span>PORTFÓLIO · 2026</span>
-    <a href="#top">voltar ao início ↑</a>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<section class="teaser"><div class="teaser-doodle">✦</div><div class="teaser-center"><span class="mono">02 — 04</span><h2>A história<br><em>continua.</em></h2><p>As próximas fases serão construídas a partir das memórias coletadas e das leituras da disciplina.</p><a href="#top" class="back magnetic">voltar ao início ↗</a></div></section>
+</main>
+<footer class="footer"><span>ANTHONY JESUS</span><span>PORTFÓLIO · 2026</span><a href="#top">voltar ao início ↑</a></footer>
+<script src="script.js"></script>
+</body></html>
