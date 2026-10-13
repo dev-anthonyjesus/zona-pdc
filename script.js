@@ -37,15 +37,36 @@ function startLoadingExperience(){
  }
  requestAnimationFrame(tick);
 }
-if(document.readyState==="complete") setTimeout(startLoadingExperience,300);
-else window.addEventListener("load",()=>setTimeout(startLoadingExperience,300),{once:true});
+const INTRO_KEY="pdcIntroCompletedV1";
 
+// Quem já concluiu a introdução não vê o loading nem a escolha de bebida de novo.
+// Assim, atualizar com F5 mantém a pessoa diretamente no site.
+const introCompleted=localStorage.getItem(INTRO_KEY)==="yes";
+if(introCompleted){
+  loader.classList.remove("active");
+  loader.classList.add("done");
+  drinkDock.classList.add("show");
+}else if(document.readyState==="complete"){
+  setTimeout(startLoadingExperience,300);
+}else{
+  window.addEventListener("load",()=>setTimeout(startLoadingExperience,300),{once:true});
+}
+
+function finishIntro(){
+  localStorage.setItem(INTRO_KEY,"yes");
+}
 function openDrink(){drinkModal.classList.add("open");document.body.classList.add("modal-open")}
-function closeDrink(){drinkModal.classList.remove("open");document.body.classList.remove("modal-open");drinkDock.classList.add("show")}
+function closeDrink(){
+  drinkModal.classList.remove("open");
+  document.body.classList.remove("modal-open");
+  drinkDock.classList.add("show");
+  finishIntro();
+}
 $("#drinkClose").addEventListener("click",closeDrink);
 $(".drink-backdrop").addEventListener("click",closeDrink);
 document.querySelectorAll(".drink-option").forEach(btn=>btn.addEventListener("click",()=>{
  localStorage.setItem("pdcDrink",JSON.stringify({icon:btn.dataset.icon,name:btn.dataset.name}));
+ finishIntro();
  $("#drinkMiniIcon").textContent=btn.dataset.icon;$("#drinkMiniName").textContent=btn.dataset.name;
  closeDrink();
 }));
