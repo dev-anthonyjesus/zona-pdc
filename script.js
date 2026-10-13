@@ -13,8 +13,12 @@ const messages=[
 
 // Primeiro o navegador carrega a interface inteira.
 // Só DEPOIS do evento load o loading aparece e começa a contagem de ~50s.
-const TOTAL=56000;
+const TOTAL=28000;
+let loadingFrame=0;
+let loadingTimer=null;
+let introFinished=false;
 function startLoadingExperience(){
+ if(introCompleted){loader.classList.remove("active");loader.classList.add("done");return;}
  loader.classList.add("active");
  const start=performance.now();
  let lastMessage=-1;
@@ -32,8 +36,8 @@ function startLoadingExperience(){
    }
    bar.style.width=(progress*100)+"%";
    pct.textContent=String(Math.floor(progress*100)).padStart(2,"0")+"%";
-   if(progress<1) requestAnimationFrame(tick);
-   else setTimeout(()=>{loader.classList.add("done");openDrink()},700);
+   if(progress<1) loadingFrame=requestAnimationFrame(tick);
+   else loadingTimer=setTimeout(finishLoading,450);
  }
  requestAnimationFrame(tick);
 }

@@ -237,3 +237,9 @@ body{background:var(--cream);color:var(--black);font-family:"DM Sans",sans-serif
 @media(prefers-reduced-motion:reduce){
  .zeca-loader img,.zeca-hero img,.zeca-break-left img,.zeca-teaser,.zeca-drink{animation:none!important}
 }
+
+.skip-loading{position:relative;z-index:3;display:inline-flex;align-items:center;gap:12px;margin-top:24px;padding:11px 17px;border:1px solid #e7f0df77;border-radius:999px;background:#f3f4ed12;color:#f3f4ed;font:600 12px "DM Sans",sans-serif;letter-spacing:.02em;cursor:pointer;transition:background .2s,transform .2s,border-color .2s}
+.skip-loading span{font-size:16px;line-height:1}
+.skip-loading:hover{background:#f3f4ed20;border-color:#e7f0dfcc;transform:translateY(-2px)}
+.skip-loading:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+@media(max-width:600px){.skip-loading{margin-top:20px;padding:10px 15px;font-size:12px}}
