@@ -220,3 +220,20 @@ body{background:var(--cream);color:var(--black);font-family:"DM Sans",sans-serif
  .footer{border-radius:24px 24px 0 0;grid-template-columns:1fr 1fr;gap:12px;padding:24px 20px}
 }
 @media(prefers-reduced-motion:reduce){.shape,.hero-photo,.zeca-hero,.zeca-break-left img,.zeca-teaser{animation:none!important}}
+
+/* Zeca: gentle character motion, responsive and reduced-motion aware */
+.zeca-loader img,.zeca-hero img,.zeca-break-left img,.zeca-teaser{
+ transform-origin:50% 78%;
+ animation:zecaCharacter 3.4s ease-in-out infinite;
+}
+.zeca-drink{animation:zecaCharacter 3.8s ease-in-out infinite}
+@keyframes zecaCharacter{
+ 0%,100%{transform:translateY(0) rotate(-2deg)}
+ 25%{transform:translateY(-5px) rotate(1deg)}
+ 50%{transform:translateY(-9px) rotate(3deg)}
+ 75%{transform:translateY(-3px) rotate(-1deg)}
+}
+.zeca-loader img{filter:drop-shadow(0 14px 24px #001e12aa)}
+@media(prefers-reduced-motion:reduce){
+ .zeca-loader img,.zeca-hero img,.zeca-break-left img,.zeca-teaser,.zeca-drink{animation:none!important}
+}
