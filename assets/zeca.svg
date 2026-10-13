@@ -1,16 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420">
-<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#58b104"/><stop offset="1" stop-color="#d8e83f"/></linearGradient></defs>
-<path d="M300 315c75 5 91 57 38 72-35 10-61-8-49-31 9-17 39-11 48 4" fill="none" stroke="#28522d" stroke-width="20" stroke-linecap="round"/>
-<path d="M156 125c-45 10-76 51-67 96 9 45 52 70 99 59 35-8 56-32 61-67l12 52c5 23 21 38 43 42l30-5c17-3 28-17 26-34-2-19-18-30-36-27l-20 3-10-68c-5-33-32-57-64-55z" fill="url(#g)" stroke="#101010" stroke-width="8"/>
-<ellipse cx="177" cy="108" rx="35" ry="32" fill="#58b104" stroke="#101010" stroke-width="8"/><ellipse cx="250" cy="103" rx="35" ry="32" fill="#58b104" stroke="#101010" stroke-width="8"/>
-<circle cx="183" cy="101" r="18" fill="#fff"/><circle cx="256" cy="96" r="18" fill="#fff"/><circle cx="187" cy="102" r="9" fill="#101010"/><circle cx="260" cy="97" r="9" fill="#101010"/>
-<path d="M176 143c22 17 48 17 68-1" fill="none" stroke="#101010" stroke-width="7" stroke-linecap="round"/>
-<path d="M103 175c-28 4-42 21-47 43" fill="none" stroke="#101010" stroke-width="9" stroke-linecap="round"/>
-<path d="M142 270l-10 79m104-82 18 77" stroke="#101010" stroke-width="12" stroke-linecap="round"/>
-<path d="M128 347l-20 27m146-30 24 23" stroke="#101010" stroke-width="12" stroke-linecap="round"/>
-<path d="M91 207c-23 18-25 45-7 61" fill="none" stroke="#101010" stroke-width="8" stroke-linecap="round"/>
-<circle cx="118" cy="157" r="9" fill="#e96b9b"/><circle cx="225" cy="160" r="10" fill="#e96b9b"/><circle cx="153" cy="214" r="8" fill="#f6a01a"/><circle cx="231" cy="215" r="8" fill="#f6a01a"/>
-<path d="M316 198c-25 15-40 42-35 68" fill="none" stroke="#101010" stroke-width="10" stroke-linecap="round"/>
-<path d="M307 194l-10-19m16 18 4-21" stroke="#101010" stroke-width="7" stroke-linecap="round"/>
-<path d="M116 128c-22-13-30-34-21-50 10-18 35-20 51-7 13 11 14 31 2 43" fill="#d8e83f" stroke="#101010" stroke-width="8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 500" role="img" aria-labelledby="title">
+<title id="title">Zeca, camaleão de boné e óculos escuros</title>
+<defs>
+ <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a9f08b"/><stop offset="1" stop-color="#63c95f"/></linearGradient>
+ <pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#07120d" opacity=".45"/></pattern>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="5" flood-color="#07120d" flood-opacity=".18"/></filter>
+</defs>
+<g filter="url(#shadow)" stroke="#080b09" stroke-linecap="round" stroke-linejoin="round">
+ <!-- tail -->
+ <path d="M286 356c67-25 95 20 66 48-20 20-51 7-38-11 8-10 22-4 21 4" fill="none" stroke="#080b09" stroke-width="18"/>
+ <path d="M286 356c67-25 95 20 66 48-20 20-51 7-38-11 8-10 22-4 21 4" fill="none" stroke="#79d96f" stroke-width="10"/>
+ <!-- shirt -->
+ <path d="M128 260Q165 235 204 244L261 248Q316 263 343 315L377 405Q380 425 359 431L86 431Q67 425 72 401L84 322Q94 284 128 260Z" fill="#080b09" stroke-width="8"/>
+ <path d="M111 291Q151 321 191 335L304 300" fill="none" stroke="#161a17" stroke-width="5"/>
+ <!-- neck -->
+ <path d="M166 214L163 273Q188 296 225 271L220 213Z" fill="url(#skin)" stroke-width="7"/>
+ <!-- head and snout -->
+ <path d="M119 132Q124 80 181 70Q242 57 273 102Q294 126 278 164L253 205Q234 236 197 232Q160 229 143 198L127 175Q107 162 119 132Z" fill="url(#skin)" stroke-width="8"/>
+ <path d="M125 166Q93 166 86 187Q111 198 143 188" fill="url(#skin)" stroke-width="7"/>
+ <path d="M128 189Q151 201 180 192" fill="none" stroke-width="5"/>
+ <circle cx="119" cy="169" r="5" fill="#080b09" stroke="none"/>
+ <path d="M211 178l-4 7m21-9-3 7" fill="none" stroke-width="4"/>
+ <!-- shades -->
+ <path d="M130 124Q156 112 183 124L180 151Q174 168 153 162Q136 158 130 124Z" fill="#050706" stroke-width="6"/>
+ <path d="M194 123Q222 109 251 122L243 150Q235 165 215 159Q199 154 194 123Z" fill="#050706" stroke-width="6"/>
+ <path d="M180 130Q188 124 196 129" fill="none" stroke-width="6"/>
+ <path d="M141 128l26 22m40-24 22 20" fill="none" stroke="#4b5d4e" stroke-width="3"/>
+ <!-- cap -->
+ <path d="M108 119Q94 78 122 49Q158 17 209 36Q239 48 252 83L267 103Q220 91 176 105Q142 114 108 119Z" fill="#050706" stroke-width="8"/>
+ <path d="M113 111Q76 109 48 133Q82 141 131 127" fill="#050706" stroke-width="8"/>
+ <path d="M144 45Q183 26 219 53" fill="none" stroke="#202820" stroke-width="5"/>
+ <path d="M179 36Q181 56 194 76" fill="none" stroke="#202820" stroke-width="4"/>
+ <!-- folded arms -->
+ <path d="M92 322Q126 302 160 320L238 360Q259 372 243 391L227 407Q213 417 194 406L103 366Q77 355 92 322Z" fill="url(#skin)" stroke-width="8"/>
+ <path d="M326 322Q303 300 275 312L196 355Q176 368 190 388L204 404Q218 415 238 404L322 365Q346 352 326 322Z" fill="url(#skin)" stroke-width="8"/>
+ <path d="M116 324Q140 334 161 350M295 323Q272 338 252 351" fill="none" stroke-width="5"/>
+</g>
+<path d="M132 203Q153 225 176 223L167 244Q146 230 132 203Z" fill="url(#dots)" opacity=".8"/>
+<path d="M96 319Q120 310 141 326L154 337Q132 329 115 338Z" fill="url(#dots)" opacity=".7"/>
+<path d="M309 326Q291 314 271 328L258 337Q282 328 298 340Z" fill="url(#dots)" opacity=".7"/>
 </svg>
