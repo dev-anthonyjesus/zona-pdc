@@ -3,34 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#073f2b">
+<meta name="theme-color" content="#101110">
 <title>PRATES A CONHECER — Portfólio PDC</title>
-<link rel="icon" type="image/svg+xml" href="assets/zona-favicon.svg?v=45">
+<link rel="icon" type="image/svg+xml" href="assets/zona-favicon.svg?v=47">
 <meta name="description" content="Uma infância contada por quem estava lá — portfólio de Psicologia do Desenvolvimento da Criança.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--forest:#073f2b;--sage:#b7d99a;--lime:#d7ef9a;--cream:#f3f4ed;--pink:#e8a1a9;--ink:#183328}
+:root{--forest:#101110;--sage:#aeb5b1;--lime:#8bd83f;--cream:#f1f3ef;--pink:#aeb5b1;--ink:#101110}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif}
-body{min-height:100svh;background:var(--forest);color:var(--cream);overflow:hidden}
+body{min-height:100svh;background:radial-gradient(ellipse at 50% 42%,#20251f 0%,#101110 56%,#080909 100%);color:var(--cream);overflow:hidden}
 main{min-height:100svh;display:grid;place-items:center;padding:28px;position:relative;isolation:isolate}
 .blob{position:absolute;z-index:-1;border-radius:50%;filter:blur(1px);pointer-events:none}
-.blob.one{width:min(75vw,760px);aspect-ratio:1;background:#7bbd6826;left:-25%;bottom:-55%;animation:float 12s ease-in-out infinite}
-.blob.two{width:min(42vw,420px);aspect-ratio:1;background:#e8a1a91c;right:-12%;top:-25%;animation:float 15s ease-in-out infinite reverse}
+.blob.one{width:min(75vw,760px);aspect-ratio:1;background:#8bd83f12;left:-25%;bottom:-55%;animation:float 12s ease-in-out infinite}
+.blob.two{width:min(42vw,420px);aspect-ratio:1;background:#bfc7c122;right:-12%;top:-25%;animation:float 15s ease-in-out infinite reverse}
 .card{width:min(100%,680px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px}
-.kicker{font:500 10px "DM Mono",monospace;letter-spacing:.2em;color:#c7ddc7}
-.brand{font-size:clamp(12px,2vw,14px);font-weight:800;letter-spacing:.18em;color:var(--lime)}
-.mascot{width:clamp(90px,17vw,145px);height:auto;object-fit:contain;filter:drop-shadow(0 14px 22px #001e1266);animation:bob 3.5s ease-in-out infinite}
-.message{font-size:clamp(28px,5.6vw,54px);line-height:1.02;letter-spacing:-.065em;font-weight:800;max-width:650px;min-height:2.1em;display:grid;place-items:center;text-wrap:balance}
-.sub{font-size:14px;line-height:1.6;color:#d0dfd1;max-width:430px;min-height:3em}
-.track{width:min(100%,390px);height:5px;background:#ffffff26;border-radius:99px;overflow:hidden}
-.track span{display:block;width:0;height:100%;background:var(--lime);border-radius:inherit;transition:width .15s linear}
-.foot{width:min(100%,390px);display:flex;justify-content:space-between;color:#c7ddc7;font:10px "DM Mono",monospace;letter-spacing:.12em}
-.skip{margin-top:8px;border:1px solid #d7ef9a88;border-radius:999px;padding:12px 19px;background:#ffffff0d;color:var(--cream);font:700 12px "DM Sans",sans-serif;cursor:pointer;transition:.2s}
-.skip:hover{background:#ffffff20;transform:translateY(-2px)}
+.kicker{font:500 10px "DM Mono",monospace;letter-spacing:.22em;color:#aeb5b1}
+.brand{font-size:clamp(12px,2vw,14px);font-weight:900;letter-spacing:.2em;color:var(--lime);text-shadow:0 0 24px #8bd83f55}
+.mascot{width:clamp(180px,31vw,270px);height:auto;max-height:42svh;object-fit:contain;filter:drop-shadow(0 18px 34px #000b) drop-shadow(0 0 22px #8bd83f25);animation:bob 3.5s ease-in-out infinite}
+.message{font-size:clamp(28px,5.6vw,54px);line-height:1.02;letter-spacing:-.065em;font-weight:900;max-width:650px;min-height:2.1em;display:grid;place-items:center;text-wrap:balance;text-shadow:0 3px 26px #0008}
+.sub{font-size:14px;line-height:1.6;color:#b9c0bb;max-width:430px;min-height:3em}
+.track{width:min(100%,390px);height:5px;background:linear-gradient(90deg,#343a35,#777e79);border-radius:99px;overflow:hidden;box-shadow:0 0 18px #8bd83f12}
+.track span{display:block;width:0;height:100%;background:linear-gradient(90deg,#65b72c,#b2ed72);border-radius:inherit;transition:width .15s linear;box-shadow:0 0 14px #8bd83f88}
+.foot{width:min(100%,390px);display:flex;justify-content:space-between;color:#aeb5b1;font:10px "DM Mono",monospace;letter-spacing:.12em}
+.skip{margin-top:8px;border:1px solid #8bd83f;border-radius:999px;padding:12px 22px;background:linear-gradient(100deg,#65b72c,#9be34e);color:#101110;font:800 12px "DM Sans",sans-serif;cursor:pointer;transition:.2s;box-shadow:0 8px 28px #8bd83f24}
+.skip:hover{filter:brightness(1.12);transform:translateY(-2px)}
 .skip:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
-.note{font:10px "DM Mono",monospace;color:#b7d99a99;letter-spacing:.12em}
+.note{font:10px "DM Mono",monospace;color:#aeb5b188;letter-spacing:.14em}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
 @keyframes float{50%{transform:translate(25px,-20px) scale(1.05)}}
 @media(max-width:520px){main{padding:24px 20px}.card{gap:18px}.sub{font-size:13px}.message{min-height:2.5em}}
@@ -43,7 +43,7 @@ main{min-height:100svh;display:grid;place-items:center;padding:28px;position:rel
 <section class="card" aria-live="polite">
 <div class="brand">PRATES A CONHECER</div>
 <div class="kicker">PORTFÓLIO PDC · UFBA · 2026</div>
-<img class="mascot" src="assets/zeca-loading.webp?v=46" alt="Zeca, o camaleão" style="width:clamp(130px,25vw,210px);max-height:300px;object-fit:contain;">
+<img class="mascot" src="assets/1.png?v=47" alt="Zeca, o camaleão" style="width:clamp(180px,31vw,270px);max-height:42svh;object-fit:contain;">
 <div class="message" id="message">Olá, Juliana. Como você está?</div>
 <p class="sub" id="sub">Estamos preparando uma pequena viagem pela memória.</p>
 <div class="track" aria-label="Progresso do carregamento"><span id="progress"></span></div>
