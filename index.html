@@ -33,7 +33,22 @@ main{min-height:100svh;display:grid;place-items:center;padding:28px;position:rel
 .note{font:10px "DM Mono",monospace;color:#aeb5b188;letter-spacing:.14em}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
 @keyframes float{50%{transform:translate(25px,-20px) scale(1.05)}}
-@media(max-width:520px){main{padding:24px 20px}.card{gap:18px}.sub{font-size:13px}.message{min-height:2.5em}}
+
+/* Mascote ancorado no rodapé: o corte original da arte encontra a borda da tela */
+.card{width:min(100%,760px);gap:18px;padding:22px 20px 15vh;transform:translateY(-2vh)}
+.mascot{position:fixed;right:clamp(18px,8vw,130px);bottom:0;width:clamp(205px,29vw,350px)!important;max-height:56svh!important;height:auto;object-fit:contain;object-position:center bottom;z-index:-1;filter:drop-shadow(0 0 24px #8bd83f20);animation:bob 4.2s ease-in-out infinite}
+.brand{margin-top:1vh}
+.message{min-height:2.25em;max-width:720px}
+.sub{min-height:2em}
+.track,.foot{width:min(100%,430px)}
+@media(max-width:700px){
+ .card{padding:10px 10px 34svh;gap:15px;transform:translateY(-1vh)}
+ .mascot{right:50%;transform:translateX(50%);bottom:0;width:auto!important;height:34svh;max-height:34svh!important;max-width:76vw;object-fit:contain;object-position:center bottom}
+ .message{font-size:clamp(27px,8vw,42px);min-height:2.5em}
+ .sub{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.mascot{animation:none!important}}
+
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -64,7 +79,7 @@ const messages=[
 ["Ratos de Brofem Brener.","Essa é para quem vai entender."],
 ["Pronto, Juliana. Pode entrar.","Sua apresentação está logo ali."]
 ];
-const duration=14000;
+const duration=23000;
 const message=document.getElementById("message"),sub=document.getElementById("sub"),progress=document.getElementById("progress"),percent=document.getElementById("percent"),skip=document.getElementById("skip");
 let started=performance.now(),frame=0,redirected=false,last=-1;
 function go(){if(redirected)return;redirected=true;skip.disabled=true;skip.textContent="Abrindo seu portfólio…";window.location.replace(DESTINATION)}
