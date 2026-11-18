@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101110">
 <title>PRATES A CONHECER — Portfólio PDC</title>
-<link rel="icon" type="image/svg+xml" href="assets/zona-favicon.svg?v=47">
+<link rel="icon" type="image/svg+xml" href="assets/zona-favicon.svg?v=49">
 <meta name="description" content="Uma infância contada por quem estava lá — portfólio de Psicologia do Desenvolvimento da Criança.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,20 +34,31 @@ main{min-height:100svh;display:grid;place-items:center;padding:28px;position:rel
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
 @keyframes float{50%{transform:translate(25px,-20px) scale(1.05)}}
 
-/* Mascote ancorado no rodapé: o corte original da arte encontra a borda da tela */
-.card{width:min(100%,760px);gap:18px;padding:22px 20px 15vh;transform:translateY(-2vh)}
-.mascot{position:fixed;right:clamp(18px,8vw,130px);bottom:0;width:clamp(205px,29vw,350px)!important;max-height:56svh!important;height:auto;object-fit:contain;object-position:center bottom;z-index:-1;filter:drop-shadow(0 0 24px #8bd83f20);animation:bob 4.2s ease-in-out infinite}
-.brand{margin-top:1vh}
-.message{min-height:2.25em;max-width:720px}
-.sub{min-height:2em}
+
+/* Composição em duas áreas: conteúdo à esquerda, Zeca à direita */
+main{display:flex;align-items:center;justify-content:flex-start;padding:clamp(28px,6vw,88px);overflow:hidden}
+.card{position:relative;z-index:2;width:min(48vw,610px);margin-left:clamp(0px,3vw,44px);padding:0;gap:20px;align-items:flex-start;text-align:left;transform:none}
+.brand{margin:0}
+.kicker{font-size:10px}
+.message{width:100%;max-width:590px;min-height:2.15em;display:flex;align-items:center;justify-content:flex-start;text-align:left;font-size:clamp(34px,4.6vw,64px);line-height:1.02;letter-spacing:-.065em}
+.sub{min-height:2em;text-align:left;font-size:15px}
 .track,.foot{width:min(100%,430px)}
-@media(max-width:700px){
- .card{padding:10px 10px 34svh;gap:15px;transform:translateY(-1vh)}
- .mascot{right:50%;transform:translateX(50%);bottom:0;width:auto!important;height:34svh;max-height:34svh!important;max-width:76vw;object-fit:contain;object-position:center bottom}
- .message{font-size:clamp(27px,8vw,42px);min-height:2.5em}
+.mascot{position:absolute;right:clamp(5vw,10vw,150px);bottom:0;width:clamp(300px,34vw,470px)!important;max-width:42vw;height:auto;max-height:78svh!important;object-fit:contain;object-position:center bottom;z-index:1;filter:drop-shadow(0 0 30px #8bd83f24);animation:bob 4.2s ease-in-out infinite;pointer-events:none}
+.skip{align-self:flex-start}
+.note{align-self:flex-start}
+@media(max-width:760px){
+ main{align-items:flex-start;justify-content:center;padding:28px 22px 0}
+ .card{width:100%;margin:0;padding:0 0 38svh;gap:15px;align-items:center;text-align:center}
+ .brand,.kicker,.message,.sub,.skip,.note{align-self:center;text-align:center}
+ .message{justify-content:center;font-size:clamp(32px,8vw,46px);min-height:2.15em}
  .sub{font-size:13px}
+ .track,.foot{width:min(100%,390px)}
+ .mascot{right:50%;bottom:0;transform:translateX(50%);width:auto!important;height:37svh;max-height:37svh!important;max-width:78vw;object-fit:contain;object-position:center bottom}
 }
-@media(prefers-reduced-motion:reduce){.mascot{animation:none!important}}
+@media(max-height:620px) and (min-width:761px){
+ .card{gap:12px}
+ .mascot{max-height:68svh!important}
+}
 
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
@@ -58,7 +69,7 @@ main{min-height:100svh;display:grid;place-items:center;padding:28px;position:rel
 <section class="card" aria-live="polite">
 <div class="brand">PRATES A CONHECER</div>
 <div class="kicker">PORTFÓLIO PDC · UFBA · 2026</div>
-<img class="mascot" src="assets/1.png?v=47" alt="Zeca, o camaleão" style="width:clamp(180px,31vw,270px);max-height:42svh;object-fit:contain;">
+<img class="mascot" src="assets/1.png?v=49" alt="Zeca, o camaleão" style="width:clamp(180px,31vw,270px);max-height:42svh;object-fit:contain;">
 <div class="message" id="message">Olá, Juliana. Como você está?</div>
 <p class="sub" id="sub">Estamos preparando uma pequena viagem pela memória.</p>
 <div class="track" aria-label="Progresso do carregamento"><span id="progress"></span></div>
