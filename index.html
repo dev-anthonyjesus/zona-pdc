@@ -1,130 +1,82 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#073f2b">
-<title>PRATES A CONHECER — uma infância contada por quem estava lá</title>
-<link rel="icon" type="image/svg+xml" href="assets/zona-favicon.svg?v=42">
-<link rel="apple-touch-icon" href="assets/zona-favicon.svg?v=42">
-<meta name="description" content="Portfólio digital de Psicologia do Desenvolvimento da Criança — Anthony Jesus.">
+<title>PRATES A CONHECER — Portfólio PDC</title>
+<link rel="icon" type="image/svg+xml" href="assets/zona-favicon.svg?v=45">
+<meta name="description" content="Uma infância contada por quem estava lá — portfólio de Psicologia do Desenvolvimento da Criança.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=44">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#073f2b;--sage:#b7d99a;--lime:#d7ef9a;--cream:#f3f4ed;--pink:#e8a1a9;--ink:#183328}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif}
+body{min-height:100svh;background:var(--forest);color:var(--cream);overflow:hidden}
+main{min-height:100svh;display:grid;place-items:center;padding:28px;position:relative;isolation:isolate}
+.blob{position:absolute;z-index:-1;border-radius:50%;filter:blur(1px);pointer-events:none}
+.blob.one{width:min(75vw,760px);aspect-ratio:1;background:#7bbd6826;left:-25%;bottom:-55%;animation:float 12s ease-in-out infinite}
+.blob.two{width:min(42vw,420px);aspect-ratio:1;background:#e8a1a91c;right:-12%;top:-25%;animation:float 15s ease-in-out infinite reverse}
+.card{width:min(100%,680px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px}
+.kicker{font:500 10px "DM Mono",monospace;letter-spacing:.2em;color:#c7ddc7}
+.brand{font-size:clamp(12px,2vw,14px);font-weight:800;letter-spacing:.18em;color:var(--lime)}
+.mascot{width:clamp(90px,17vw,145px);height:auto;object-fit:contain;filter:drop-shadow(0 14px 22px #001e1266);animation:bob 3.5s ease-in-out infinite}
+.message{font-size:clamp(28px,5.6vw,54px);line-height:1.02;letter-spacing:-.065em;font-weight:800;max-width:650px;min-height:2.1em;display:grid;place-items:center;text-wrap:balance}
+.sub{font-size:14px;line-height:1.6;color:#d0dfd1;max-width:430px;min-height:3em}
+.track{width:min(100%,390px);height:5px;background:#ffffff26;border-radius:99px;overflow:hidden}
+.track span{display:block;width:0;height:100%;background:var(--lime);border-radius:inherit;transition:width .15s linear}
+.foot{width:min(100%,390px);display:flex;justify-content:space-between;color:#c7ddc7;font:10px "DM Mono",monospace;letter-spacing:.12em}
+.skip{margin-top:8px;border:1px solid #d7ef9a88;border-radius:999px;padding:12px 19px;background:#ffffff0d;color:var(--cream);font:700 12px "DM Sans",sans-serif;cursor:pointer;transition:.2s}
+.skip:hover{background:#ffffff20;transform:translateY(-2px)}
+.skip:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+.note{font:10px "DM Mono",monospace;color:#b7d99a99;letter-spacing:.12em}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+@keyframes float{50%{transform:translate(25px,-20px) scale(1.05)}}
+@media(max-width:520px){main{padding:24px 20px}.card{gap:18px}.sub{font-size:13px}.message{min-height:2.5em}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
-<div class="loader" id="loader">
-  <div class="loader-noise"></div>
-  <div class="loader-inner">
-    <div class="loader-top mono">PORTFÓLIO PDC · UFBA · 2026</div>
-    <div class="zeca-loader"><img src="assets/zeca.svg?v=44" alt="Zeca, o camaleãozinho"><span>Zeca</span></div>
-    <div class="loader-message" id="loaderMessage">Olá Juliana, como você está?</div>
-    <div class="loader-sub" id="loaderSub">Preparando uma pequena viagem pela memória...</div>
-    <div class="loader-progress"><b id="loaderBar"></b></div>
-    <div class="loader-foot mono"><span>CARREGANDO</span><span id="loaderPct">01%</span></div>
-    <button class="skip-loading" id="skipLoading" type="button">Pular introdução <span aria-hidden="true">↗</span></button>
-  </div>
-</div>
-
-<div class="grain"></div>
-<div class="cursor" id="cursor"><span></span></div>
-
-<div class="drink-dock" id="drinkDock" aria-label="Sua bebida escolhida">
-  <span class="drink-mini-icon" id="drinkMiniIcon">☕</span>
-  <span class="drink-mini-name" id="drinkMiniName">Café</span>
-</div>
-
-<div class="drink-modal" id="drinkModal">
-  <div class="drink-backdrop"></div>
-  <div class="drink-panel">
-    <div class="drink-kicker mono">ANTES DE ENTRAR</div>
-    <button class="drink-close" id="drinkClose" aria-label="Fechar">×</button>
-    <img class="zeca-drink" src="assets/zeca.svg?v=44" alt="Zeca">
-    <h2>Escolha uma bebida<br><em>para acompanhar a história.</em></h2>
-    <p class="drink-intro">Juliana, o Zeca separou três opções. A escolha fica aqui no cantinho enquanto você navega.</p>
-    <div class="drink-options">
-      <button class="drink-option" data-drink="cafe" data-icon="☕" data-name="Café"><span class="drink-icon">☕</span><strong>Café</strong><small>Clássico. Sem perguntas.</small></button>
-      <button class="drink-option" data-drink="cha" data-icon="🍵" data-name="Chá Verde"><span class="drink-icon">🍵</span><strong>Chá Verde</strong><small>Para observar tudo com calma.</small></button>
-      <button class="drink-option ben10" data-drink="ultra" data-icon="🥤" data-name="UltraPitulhinha"><span class="drink-icon">🥤</span><strong>UltraPitulhinha</strong><small>Aprovada pelo Ben 10.</small></button>
-    </div>
-    <div class="drink-joke mono">RATOS DE BROFEM BRENER</div>
-  </div>
-</div>
-
-<main id="site">
-<section class="hero" id="top">
-  <div class="hero-grid"></div><div class="hero-orbit" aria-hidden="true"></div>
-  <div class="shape shape-lime"></div><div class="shape shape-pink"></div><div class="shape shape-blue"></div>
-  <div class="hero-top mono"><span>PSICOLOGIA DO DESENVOLVIMENTO DA CRIANÇA</span><span>UFBA / 2026</span></div>
-
-  <div class="hero-photo photo-a"><div class="photo-tape"></div><img src="assets/memoria-01.svg" alt="Arquivo visual de infância"><span>ARQUIVO 01</span></div>
-  <div class="hero-photo photo-b"><img src="assets/memoria-01.svg" alt="" aria-hidden="true"><span>?</span></div>
-  <div class="hero-photo photo-c"><img src="assets/memoria-01.svg" alt="" aria-hidden="true"><span>lembrança</span></div>
-
-  <div class="hero-copy">
-    <div class="hero-kicker mono">UM ARQUIVO VIVO · PSICOLOGIA DO DESENVOLVIMENTO</div>
-    <h1><span>PRATES</span><i>A CONHECER</i></h1>
-    <p class="hero-line">Juliana, você está <strong>Prates a conhecer</strong> minha história.</p>
-    <p class="hero-question">Se eu não consigo lembrar de tudo,<br><em>quem pode contar quem eu fui?</em></p>
-    <a class="start-button magnetic" href="#prologo"><span>começar a história</span><b>↓</b></a>
-  </div>
-
-  <div class="zeca-hero">
-    <img src="assets/zeca.svg?v=44" alt="Zeca, o camaleãozinho">
-    <span class="zeca-label mono">ZECA · NOSSO MASCOTE</span>
-  </div>
-  <div class="hero-sticker">MEMÓRIA<br><em>EM CONSTRUÇÃO</em></div>
-  <div class="hero-number mono">01—04</div>
-</section>
-
-<div class="ticker"><div class="ticker-track"><span>MEMÓRIA</span><b>✳</b><span>INFÂNCIA</span><b>✳</b><span>FAMÍLIA</span><b>✳</b><span>DESENVOLVIMENTO</span><b>✳</b><span>MEMÓRIA</span><b>✳</b><span>INFÂNCIA</span><b>✳</b><span>FAMÍLIA</span><b>✳</b><span>DESENVOLVIMENTO</span><b>✳</b></div></div>
-
-<section class="prologo" id="prologo">
-  <div class="section-tag mono">00 / PRÓLOGO</div>
-  <div class="prologo-number">00</div>
-  <div class="prologo-copy">
-    <p class="reveal-line">Eu não lembro<br><em>de tudo.</em></p>
-    <p class="reveal-line second">Mas algumas pessoas<br><strong>lembram.</strong></p>
-    <div class="prologo-text"><span></span><p>Este portfólio parte de fotografias, relatos e memórias para reconstruir quatro momentos da minha infância — e, ao longo da disciplina, olhar novamente para essas experiências por meio da Psicologia do Desenvolvimento.</p></div>
-  </div>
-  <div class="prologo-doodle">lembrar</div>
-</section>
-
-<section class="chapter" id="momento-01">
-  <div class="chapter-top"><span class="chapter-num">01</span><span class="mono">PRIMEIRO MOMENTO</span><span class="mono">[ período a definir ]</span></div>
-  <div class="chapter-title"><span class="mono">ANTES DE EU ME LEMBRAR</span><h2>Quem era<br><i>essa criança?</i></h2><div class="question-mark">?</div></div>
-  <div class="memory-layout">
-    <figure class="memory-photo">
-      <div class="photo-badge mono">MEMÓRIA #01</div>
-      <img src="assets/memoria-01.svg" alt="Arquivo visual de uma memória de infância">
-      <figcaption><span>arquivo familiar</span><span>fotografia</span></figcaption>
-    </figure>
-    <div class="memory-text">
-      <span class="mono">01.01 / FOTOGRAFIA</span>
-      <p>Há imagens que não funcionam apenas como registro. Elas são pistas para reconstruir uma história que eu próprio não consigo lembrar inteira.</p>
-      <div class="scribble-note">Olhe mais de perto →</div>
-    </div>
-  </div>
-
-  <div class="zeca-break">
-    <div class="zeca-break-left"><img src="assets/zeca.svg?v=44" alt="Zeca"><span class="mono">ZECA CHEGOU</span></div>
-    <div><h3>Algumas memórias<br><em>também têm companhia.</em></h3><p>O arquivo vai ganhar relatos, sons, imagens e as lembranças de quem estava lá.</p></div>
-  </div>
-
-  <div class="cards-grid">
-    <article><span class="mono">RELATO / 01</span><h4>“Como eu era nessa época?”</h4><p>Espaço reservado para a lembrança de um familiar. O relato será apresentado antes da releitura teórica.</p><button class="audio-button">▶ ouvir memória <small>00:00</small></button></article>
-    <article class="pink-card"><span class="mono">RELEITURA</span><h4>O que eu vou descobrir</h4><p>Depois das leituras, esta área reunirá os conceitos da disciplina que ajudarem a interpretar esta lembrança.</p><span class="mono pending">CONTEÚDO EM CONSTRUÇÃO</span></article>
-  </div>
-</section>
-
-<section class="teaser">
-  <img src="assets/zeca.svg?v=44" alt="" class="zeca-teaser">
-  <div><span class="mono">02—04</span><h2>A história<br><i>continua.</i></h2><p>Os próximos momentos serão construídos a partir das memórias reunidas e das leituras da disciplina.</p><a class="back-button" href="#top">voltar ao início ↗</a></div>
+<main>
+<div class="blob one"></div><div class="blob two"></div>
+<section class="card" aria-live="polite">
+<div class="brand">PRATES A CONHECER</div>
+<div class="kicker">PORTFÓLIO PDC · UFBA · 2026</div>
+<img class="mascot" src="assets/zeca.svg?v=44" alt="Zeca, o camaleão">
+<div class="message" id="message">Olá, Juliana. Como você está?</div>
+<p class="sub" id="sub">Estamos preparando uma pequena viagem pela memória.</p>
+<div class="track" aria-label="Progresso do carregamento"><span id="progress"></span></div>
+<div class="foot"><span>PREPARANDO SUA VISITA</span><span id="percent">00%</span></div>
+<button class="skip" id="skip" type="button">Pular e abrir o portfólio ↗</button>
+<div class="note">RATOS DE BROFEM BRENER</div>
 </section>
 </main>
-
-<footer class="footer"><span>ANTHONY JESUS</span><span>PRATES A CONHECER</span><span>UFBA · 2026</span></footer>
-<script src="script.js?v=44"></script>
-</body>
-</html>
+<script>
+(()=>{
+const DESTINATION="https://herdata.my.canva.site/portifolio-pdc";
+const messages=[
+["Olá, Juliana. Como você está?","Que bom receber sua visita."],
+["Aguarde, estamos preparando tudo para você.","Estamos organizando algumas memórias."],
+["O Zeca é o nosso mascote. Você vai gostar dele.","Ele vai acompanhar você nessa experiência."],
+["Algumas lembranças estão nas fotografias.","Outras vivem na memória de quem estava lá."],
+["Quase tudo pronto.","Pode preparar o café."],
+["Ratos de Brofem Brener.","Essa é para quem vai entender."],
+["Pronto, Juliana. Pode entrar.","Sua apresentação está logo ali."]
+];
+const duration=14000;
+const message=document.getElementById("message"),sub=document.getElementById("sub"),progress=document.getElementById("progress"),percent=document.getElementById("percent"),skip=document.getElementById("skip");
+let started=performance.now(),frame=0,redirected=false,last=-1;
+function go(){if(redirected)return;redirected=true;skip.disabled=true;skip.textContent="Abrindo seu portfólio…";window.location.replace(DESTINATION)}
+skip.addEventListener("click",go);
+function tick(now){
+ if(redirected)return;
+ const p=Math.min((now-started)/duration,1),i=Math.min(Math.floor(p*messages.length),messages.length-1);
+ if(i!==last){last=i;message.animate([{opacity:0,transform:"translateY(10px)"},{opacity:1,transform:"translateY(0)"}],{duration:380,easing:"ease-out"});message.textContent=messages[i][0];sub.textContent=messages[i][1]}
+ progress.style.width=(p*100)+"%";percent.textContent=Math.floor(p*100).toString().padStart(2,"0")+"%";
+ if(p>=1){go();return}frame=requestAnimationFrame(tick);
+}
+frame=requestAnimationFrame(tick);
+})();
+</script>
+</body></html>
